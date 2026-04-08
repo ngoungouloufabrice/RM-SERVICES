@@ -23,7 +23,6 @@ import {
   Build as MaintenanceIcon,
   CheckCircle as CheckIcon,
   ArrowForward as ArrowIcon,
-  Download as DownloadIcon,
   SupportAgent as SupportIcon,
 } from '@mui/icons-material';
 import {
@@ -208,7 +207,7 @@ export default function ServicesPage() {
         <Grid container spacing={8} alignItems="flex-start">
 
           {/* ── Sidebar ──────────────────────────────────────── */}
-          <Grid item xs={12} lg={3} sx={{ position: 'sticky', top: '80px', alignSelf: 'flex-start' }}>
+          <Grid item xs={12} lg={3} sx={{ position: 'sticky', top: '80px', alignSelf: 'flex-start', display: { xs: 'none', lg: 'block' } }}>
             <FadeInLeft>
               <Box>
                 <Typography variant="overline" sx={{ color: 'text.disabled', fontWeight: 700, mb: 2, display: 'block', letterSpacing: 2 }}>
@@ -292,13 +291,7 @@ export default function ServicesPage() {
                         </Typography>
                       </FadeInUp>
                     </Box>
-                    <FadeIn delay={0.2}>
-                      <AnimatedButton>
-                        <Button variant="text" startIcon={<DownloadIcon />} sx={{ color: 'primary.main', fontWeight: 700 }}>
-                          Catalogue PDF
-                        </Button>
-                      </AnimatedButton>
-                    </FadeIn>
+
                   </Box>
 
                   {/* Contenu : Carte + Image */}
@@ -309,11 +302,9 @@ export default function ServicesPage() {
                           elevation={0}
                           sx={{ p: 4, borderRadius: 2, border: '1px solid', borderColor: 'divider', height: '100%', transition: 'border-color 0.3s' }}
                         >
-                          <IconPulse>
                             <Box sx={{ width: 52, height: 52, borderRadius: 2, bgcolor: alpha(theme.palette.primary.main, 0.1), display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'primary.main', mb: 3 }}>
                               {service.icon}
                             </Box>
-                          </IconPulse>
                           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
                             Service Clé en Main
                           </Typography>
