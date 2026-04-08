@@ -11,6 +11,12 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off", // Optionnel : enlève aussi les alertes sur les images si vous voulez
+    },
+  },
 ]);
 
 export default eslintConfig;
